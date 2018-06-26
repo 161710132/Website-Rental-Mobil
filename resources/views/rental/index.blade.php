@@ -46,6 +46,8 @@
 				    	<td><p>{{ $data->Supir->nama }}</p></td>
 				    	<td>{{ $data->status}}</td>
 
+
+
 				    	
 
                 </td>
@@ -54,7 +56,10 @@
 </td> 
 <td>
 	<a href="{{ route('rental.show',$data->id) }}" class="btn btn-success">Show</a>
-</td> 
+</td>
+
+
+
 <td>
 	<form method="post" action="{{ route('rental.destroy',$data->id) }}">
 		<input name="_token" type="hidden" value="{{ csrf_token() }}">
@@ -63,9 +68,7 @@
 		<button type="submit" class="btn btn-danger">Delete</button>
 	</form>
 </td>
-<td>
-	<a class="btn btn-warning" href="{{ route('kembali.create',$data->id) }}">Pengembalian</a>
-</td> 
+ 
 				      </tr>
 				      @endforeach	
 				  	</tbody>
@@ -76,4 +79,5 @@
 		</div>
 	</div>
 </div>
+
 @endsection

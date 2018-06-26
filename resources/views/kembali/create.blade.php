@@ -15,8 +15,13 @@
 			  </div>
 
 			  <div class="panel-body">
+
+			  
+
               <form class="form-horizontal form-label-left" action="{{ route('kembali.store') }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
+
+
 
              <div class="form-group {{ $errors->has('tgl_kembali_akhir') ? ' has-error' : '' }}">
 			  			<label class="control-label">tgl_kembali_akhir</label>	

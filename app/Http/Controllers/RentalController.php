@@ -18,7 +18,7 @@ class RentalController extends Controller
      */
     public function index()
     {
-        $rental = Rental::all();
+        $rental=Rental::where('status','Belum')->get();
         return view('rental.index',compact('rental'));
     }
 
@@ -185,4 +185,6 @@ class RentalController extends Controller
         ]);
         return redirect()->route('rental.index');
     }
+
+    
 }

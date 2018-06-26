@@ -36,6 +36,13 @@
 <br>
 <label class="control-label">Supir yang Disewa :</label> {{ $rental->Supir->nama }}
 
+<div class="panel-title pull-right">
+<a class="btn btn-primary" href="{{ route('kembali.create') }}">Kembali</a>
+
+			  </div>
+
+
+
         		</div>
 			</div>	
 		</div>

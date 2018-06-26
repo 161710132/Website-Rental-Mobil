@@ -199,4 +199,12 @@ class MobilController extends Controller
         ]);
         return redirect()->route('mobil.index');
     }
+
+    public function tambahrental($id)
+    {
+        //
+        $mobil = Mobil::findOrFail($id);
+        $supir = Supir::where('status','Tidak')->get();
+        return view('mobil.rental', compact('mobil','supir'));
+    }
 }

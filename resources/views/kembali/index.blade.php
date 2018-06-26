@@ -21,11 +21,7 @@
 			  		  <th>No</th>
 			  		  <th>Tanggal Kembali Akhir</th>
 			  		  <th>NIK Konsumen</th>
-			  		  
-			  		  
-					  
-					  
-					  <th colspan="3">Action</th>
+			  		  <th colspan="3">Action</th>
 			  		</tr>
 				  	</thead>
 				  	<tbody>
@@ -44,6 +40,11 @@
 						<td>
 							<a class="btn btn-warning" href="{{ route('kembali.edit',$data->id) }}">Edit</a>
 						</td>
+
+						<td>
+							<a class="btn btn-primary" href="{{ route('kembali.show',$data->id) }}">Show</a>
+						</td>
+
 						<!-- <td>
 							<a href="{{ route('kembali.index',$data->id) }}" class="btn btn-success">Pengembalian</a>
 						</td> --> 
