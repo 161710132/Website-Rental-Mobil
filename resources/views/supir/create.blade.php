@@ -1,4 +1,4 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
@@ -9,8 +9,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Tambah Data Supir 
-			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
-			  	</div>
+			  <br><br>	
 			  </div>
 
 			 <div class="panel-body">
@@ -18,7 +17,7 @@
               {{ csrf_field() }}
 
               <div class="form-group {{ $errors->has('foto_supir') ? ' has-error' : '' }}">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-3">Foto Supir</label>
+                          <label class="control-label col-md-3 col-sm-3 col-xs-3">Foto</label>
                           <div class="col-md-9 pr-1">
                           <input type="file" name="foto_supir" class="form-control" required="" style="background-color: #0000">
                             @if ($errors->has('foto_supir'))
@@ -129,6 +128,8 @@
 			  		
 			  		<div class="form-group">
 			  			<button type="submit" class="btn btn-primary">Tambah</button>
+			  			<div class="btn btn-warning"><a href="{{ url()->previous() }}">Kembali</a>
+			  	</div>
 			  		</div>
 			  	</form>
 			  </div>

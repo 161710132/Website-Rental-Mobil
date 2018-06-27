@@ -18,8 +18,8 @@ Route::get('/', function () {
 Route::get('/', 'Select2Controller@index');
 Route::get('/cari', 'Select2Controller@loadData');
 
-Route::get('admin1',function(){
-	return view('layouts.admin1');
+Route::get('admin',function(){
+	return view('layouts.adminn');
 });
 
 Auth::routes();
@@ -27,21 +27,28 @@ Auth::routes();
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
-	Route::group(['prefix'=>'admin1', 'middleware'=>['auth','role:admin']], function(){
-	Route::resource('merk','MerkController');
+	Route::group(['prefix'=>'adminn', 'middleware'=>['auth','role:admin']], function(){
+	
 	Route::resource('mobil','MobilController');
+	// Route::get('daftarmobil','RentalController@daftarmobil')->name('daftarmobil');
 	Route::resource('customer','CustomerController');
 	Route::resource('supir','SupirController');
 	Route::resource('rental','RentalController');
 	Route::resource('kembali','KembaliController');
 });
 
-Route::get('user1',function(){
-	return view('layouts.user1');
-});
+	Route::get('daftarmobil','RentalController@daftarmobil')->name('daftarmobil');
 
-Route::get('user',function(){
-	return view('layouts.user');
-});
+Route::resource('merk','MerkController');
 
-Route::resource('kembali','KembaliController');
+// Route::get('user1',function(){
+// 	return view('layouts.user1');
+// });
+
+// Route::get('user',function(){
+// 	return view('layouts.user');
+// });
+
+
+
+// Route::resource('kembali','KembaliController');

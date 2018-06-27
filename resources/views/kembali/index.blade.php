@@ -1,14 +1,16 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
 <div class="card-body text-secondary"></div>
 </section>
-<div class="row">
+<div class="col-lg-12 stretch-card">
 	<div class="container">
-		<div class="col-md-12">
-			<div class="panel panel-primary">
-			  <div class="panel-heading">Data Pengembalian 
+		<div class="card">
+                <div class="card-body">
+			  <div class="card-title">Data Pengembalian 
+			  <br>
+			  <br>
 			  <div class="panel-title pull-right"><a class="btn btn-success" href="{{ route('kembali.create') }}">Tambah</a>
 
 			  </div>

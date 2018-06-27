@@ -1,27 +1,24 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
-<div class="card-body text-secondary">col-lg-12</div>
+<div class="card-body text-secondary"></div>
 </section>
 <div class="row">
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
 			  <div class="panel-heading">Tambah Data Post 
-			  <br>
-			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
-			  	</div>
+			  <br><br>
 			  </div>
-
 			  <div class="panel-body">
               <form class="form-horizontal form-label-left" action="{{ route('mobil.store') }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}
 
-              <div class="form-group {{ $errors->has('foto_mobil') ? ' has-error' : '' }}">
-                          <label class="control-label col-md-3 col-sm-3 col-xs-3">Foto Mobil</label>
+             <div class="form-group {{ $errors->has('foto_mobil') ? ' has-error' : '' }}">
+                <label class="control-label col-md-3 col-sm-3 col-xs-3">Gambar</label>
                           <div class="col-md-9 pr-1">
-                          <input type="file" name="foto_mobil" class="form-control" required="" style="background-color: #0000">
+                        <input type="file" name="foto_mobil" class="form-control" required="" style="background-color: #0000">
                             @if ($errors->has('foto_mobil'))
                               <span class="help-block">
                                 <strong>{{ $errors->first('foto_mobil') }}</strong>
@@ -139,7 +136,10 @@
 			  		
 			  		<div class="form-group">
 			  			<button type="submit" class="btn btn-primary">Tambah</button>
-			  		</div>
+			  		
+			  		<div class="btn btn-success "><a href="{{ url()->previous() }}">Kembali</a>
+			  	</div>
+			  	</div>
 			  	</form>
 			  </div>
 			</div>	

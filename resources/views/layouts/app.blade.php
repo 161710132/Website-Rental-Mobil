@@ -51,19 +51,17 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
+        <div class="dropdown-menu" aria-labelledby = "navbarDropdown">
+        <a class="dropdown-item" href="{{ route('logout') }}"
+         onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout')}}
+                        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+        </form>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
+        </div>
                             </li>
                         @endguest
                     </ul>

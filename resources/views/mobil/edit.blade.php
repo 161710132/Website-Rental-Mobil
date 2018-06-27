@@ -1,8 +1,8 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
-<div class="card-body text-secondary">col-lg-12</div>
+<div class="card-body text-secondary"></div>
 </section>
 <div class="row">
 	<div class="container">

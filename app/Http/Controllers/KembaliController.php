@@ -20,8 +20,9 @@ class KembaliController extends Controller
      */
     public function index()
     {
+        $rental = Rental::all();
         $kembali = Kembali::all();
-        return view('kembali.index',compact('kembali'));
+        return view('kembali.index',compact('kembali','rental'));
     }
 
     /**
@@ -72,8 +73,8 @@ class KembaliController extends Controller
         $hargasupir = $rental->Supir->harga_sewasupir;
         $kembali->denda = $hasil * ($hargamobil + $hargasupir);
 
-        $kembali->total_harga = $rental->total_sewa + $kembali->denda;
-        $kembali->rental_id = $request->rental_id;
+        // $kembali->total_harga = $rental->total_sewa + $kembali->denda;
+        // $kembali->rental_id = $request->rental_id;
         
         // return $kembali;
         $kembali->save();

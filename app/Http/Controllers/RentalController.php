@@ -22,6 +22,14 @@ class RentalController extends Controller
         return view('rental.index',compact('rental'));
     }
 
+     public function daftarmobil()
+    {
+        $rental = Rental::all();
+        $mobil = Mobil::all();
+        $supir = Supir::all();
+        return view('rental.daftarmobil',compact('rental','mobil','supir'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -175,10 +183,10 @@ class RentalController extends Controller
      * @param  \App\Rental  $rental
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rental $rental)
+    public function destroy($id)
     {
         $rental = Rental::findOrFail($id);
-        $rental->kembali();
+        $rental->delete();
         Session::flash("flash_notification", [
         "level"=>"success",
         "message"=>"Data Berhasil dihapus"

@@ -1,4 +1,4 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
@@ -16,7 +16,7 @@
 
 			  <div class="panel-body">
 
-			  
+
 
               <form class="form-horizontal form-label-left" action="{{ route('kembali.store') }}" method="post" enctype="multipart/form-data">
               {{ csrf_field() }}

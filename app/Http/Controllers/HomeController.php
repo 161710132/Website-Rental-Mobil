@@ -33,7 +33,7 @@ class HomeController extends Controller
 
     public function adminDashboard()
     {
-        return view('layouts.admin');
+        return view('layouts.adminn');
     }
 
      public function memberDashboard()

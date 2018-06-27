@@ -1,4 +1,4 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
@@ -20,13 +20,13 @@
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
-					  <th>NIK Konsumen</th>
+					  <!-- <th>NIK Konsumen</th> -->
 					  <th>Nama Konsumen</th>
 					  <th>Jenis Kelamin</th>
 					  <th>Alamat Konsumen</th>
-					  <th>No Handphone Konsumen</th>
-					  <th>Nama Mobil</th>
-					  <th>Nama Supir</th>
+					  <!-- <th>No Handphone Konsumen</th> -->
+					  <!-- <th>Nama Mobil</th>
+					  <th>Nama Supir</th> -->
 					  <th>Status</th>
 					  <th colspan="3">Action</th>
 			  		</tr>
@@ -37,13 +37,13 @@
 				  		@foreach($rental as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
-				    	<td>{{ $data->nik_kons }}</td>
+				    	<!-- <td>{{ $data->nik_kons }}</td> -->
 				    	<td>{{ $data->nama_kons }}</td>
 				    	<td>{{ $data->jk_kons }}</td>
 				    	<td>{{ $data->alamat}}</td>
-				    	<td>{{ $data->no_hp}}</td>
-				    	<td><p>{{ $data->Mobil->nama }}</p></td>
-				    	<td><p>{{ $data->Supir->nama }}</p></td>
+				    	<!-- <td>{{ $data->no_hp}}</td> -->
+				    	<!-- <td><p>{{ $data->Mobil->nama }}</p></td>
+				    	<td><p>{{ $data->Supir->nama }}</p></td> -->
 				    	<td>{{ $data->status}}</td>
 
 

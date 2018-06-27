@@ -1,4 +1,4 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 <center>
 @section('content')
 
@@ -45,7 +45,7 @@
 <td>
 	<form method="post" action="{{ route('merk.destroy',$data->id) }}">
 		<input name="_token" type="hidden" value="{{ csrf_token() }}">
-		<input type="hidden" name="_method" value="DELETE">
+		<input type="hidden" name="_method" value="delete">
 
 		<button type="submit" class="btn btn-danger">Delete</button>
 	</form>

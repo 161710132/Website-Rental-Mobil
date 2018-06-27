@@ -115,7 +115,7 @@ class MobilController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'foto_mobil'=>'image|max:2048',
+            'foto_mobil'=>'required|',
             'nama' => 'required|',
             'perseneling' => 'required|',
             'plat_no' => 'required|',
@@ -123,8 +123,7 @@ class MobilController extends Controller
             'tahun_keluaran'=> 'required|',
             'harga_sewa'=>'required|',
             'stock'=>'required|',
-            'jenis'=>'required|',
-            'status'=>'required|'
+            'jenis'=>'required|'
         ]);
         $mobil = Mobil::findOrFail($id);
         
@@ -137,7 +136,7 @@ class MobilController extends Controller
         $mobil->stock = $request->stock;
         $mobil->jenis = $request->jenis;
         $mobil->merk_id = $request->merk_id;
-        $mobil->status = $request->status;
+        
 
         //edit upload foto
 
@@ -183,15 +182,16 @@ class MobilController extends Controller
 
         if ($mobil->foto_mobil){
             $old_foto = $mobil->foto_mobil;
-            $filepath = public_path() . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . $mobil->foto_supir; 
+            $filepath = public_path() . DIRECTORY_SEPARATOR . 'img' . DIRECTORY_SEPARATOR . $mobil->foto_mobil; 
             try {
                 File::delete($filepath);
             } catch (FileNotFoundException $e){
 
-                //file sudah dihapus/tidak ada
+                
             }
         } 
 
+        
         $mobil->delete();
         Session::flash("flash_notification", [
         "level"=>"success",
@@ -200,11 +200,5 @@ class MobilController extends Controller
         return redirect()->route('mobil.index');
     }
 
-    public function tambahrental($id)
-    {
-        //
-        $mobil = Mobil::findOrFail($id);
-        $supir = Supir::where('status','Tidak')->get();
-        return view('mobil.rental', compact('mobil','supir'));
-    }
+    
 }

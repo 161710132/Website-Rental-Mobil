@@ -1,4 +1,4 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 
 <section class="card">
@@ -8,7 +8,10 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="panel panel-primary">
+			<br>
 			  <div class="panel-heading">Data Mobil 
+			  <br>
+			  <br>
 			  <div class="panel-title pull-right"><a class="btn btn-success" href="{{ route('mobil.create') }}">Tambah</a>
 
 			  </div>
@@ -21,14 +24,14 @@
 			  		  <th>No</th>
 			  		  <th>Foto Mobil</th>
 					  <th>Nama Mobil</th>
-					  <th>Perseneling</th>
+					  <!-- <th>Perseneling</th> -->
 					  <th>Plat No</th>
-					  <th>Warna</th>
-					  <th>Tahun Keluaran</th>
-					  <th>Harga Sewa</th>
-					  <th>Stock</th>
-					  <th>Jenis</th>
-					  <th>Merk</th>
+					  <!-- <th>Warna</th> -->
+					  <!-- <th>Tahun Keluaran</th> -->
+					  <!-- <th>Harga Sewa</th> -->
+					  <!-- <th>Stock</th> -->
+					  <!-- <th>Jenis</th> -->
+					  <!-- <th>Merk</th> -->
 					  <th>Status</th>
 					  <th colspan="3">Action</th>
 			  		</tr>
@@ -41,25 +44,25 @@
 				    	<td>{{ $no++ }}</td>
 				    	<td><img src="{{asset('/img/'.$data->foto_mobil.'')}} " width="85" height="80"></td>
 				    	<td>{{ $data->nama }}</td>
-				    	<td><p>{{ $data->perseneling }}</p></td>
+				    	<!-- <td><p>{{ $data->perseneling }}</p></td> -->
 				    	<td><p>{{ $data->plat_no }}</p></td>
-				    	<td><p>{{ $data->warna }}</p></td>
-				    	<td><p>{{ $data->tahun_keluaran }}</p></td>
-				    	<td><p>Rp. {{ $data->harga_sewa }}</p></td>
-				    	<td><p>{{ $data->stock }}</p></td>
-				    	<td><p>{{ $data->jenis }}</p></td>
-				    	<td><p>{{ $data->Merk->nama_merk }}</p></td>
+				    	<!-- <td><p>{{ $data->warna }}</p></td>
+				    	<td><p>{{ $data->tahun_keluaran }}</p></td> -->
+				    	<!-- <td><p>Rp. {{ $data->harga_sewa }}</p></td> -->
+				    	<!-- <td><p>{{ $data->stock }}</p></td>
+				    	<td><p>{{ $data->jenis }}</p></td> -->
+				    	<!-- <td><p>{{ $data->Merk->nama_merk }}</p></td> -->
 				    	<td><p>{{ $data->status }}</p></td>
 						<td>
 							<a class="btn btn-warning" href="{{ route('mobil.edit',$data->id) }}">Edit</a>
 						</td>
-						<!-- <td>
+						<td>
 							<a href="{{ route('mobil.show',$data->id) }}" class="btn btn-success">Show</a>
-						</td> -->
+						</td>
 						<td>
 							<form method="post" action="{{ route('mobil.destroy',$data->id) }}">
 								<input name="_token" type="hidden" value="{{ csrf_token() }}">
-								<input type="hidden" name="_method" value="DELETE">
+								<input type="hidden" name="_method" value="delete">
 
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</form>

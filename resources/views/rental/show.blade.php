@@ -1,4 +1,4 @@
-@extends('layouts.admin1')
+@extends('layouts.adminn')
 @section('content')
 <br>
 
@@ -9,8 +9,7 @@
 			<div class="panel panel-primary">
 			  <div class="panel-heading"> Data Peminjaman Mobil dengan Nama  {{$rental->nama_kons}}
 			  <br><br>
-			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
-			  	</div>
+			  	
 			  </div>
 			  <div class="panel-body">
 
@@ -37,8 +36,10 @@
 <label class="control-label">Supir yang Disewa :</label> {{ $rental->Supir->nama }}
 
 <div class="panel-title pull-right">
-<a class="btn btn-primary" href="{{ route('kembali.create') }}">Kembali</a>
+<a class="btn btn-primary" href="{{ route('rental.index') }}">Kembali</a>
+<a class="btn btn-danger" href="{{ route('kembali.create') }}">Pengembalian</a>
 
+			  </div>
 			  </div>
 
 
